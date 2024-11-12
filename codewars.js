@@ -241,15 +241,27 @@
 
 // console.log(removeSmallest([5, 3, 2, 1, 4]));
 
-function calculate(string) {
-  let numbers = string.match(/\d+/g);
-  console.log(numbers);
-  if (string.includes("loses")) {
-    let res = numbers[0] - numbers[1];
-    return res;
-  } else if (string.includes("gains")) {
-    let res = Number(numbers[0]) + Number(numbers[1]);
-    return res;
+// function calculate(string) {
+//   let numbers = string.match(/\d+/g);
+//   console.log(numbers);
+//   if (string.includes("loses")) {
+//     let res = numbers[0] - numbers[1];
+//     return res;
+//   } else if (string.includes("gains")) {
+//     let res = Number(numbers[0]) + Number(numbers[1]);
+//     return res;
+//   }
+// }
+// console.log(calculate("Jerry has 34 apples and gains 6"));
+
+function isIsogram(str) {
+  const arr = str.toLocaleLowerCase().split("");
+  arr.sort();
+  for (let i = 0; i <= arr.length - 1; i++) {
+    if (arr[i] === arr[i + 1]) {
+      return false;
+    }
   }
+  return true;
 }
-console.log(calculate("Jerry has 34 apples and gains 6"));
+console.log(isIsogram("Dermatoglyphics"));
