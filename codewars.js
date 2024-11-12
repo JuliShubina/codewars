@@ -254,14 +254,27 @@
 // }
 // console.log(calculate("Jerry has 34 apples and gains 6"));
 
-function isIsogram(str) {
-  const arr = str.toLocaleLowerCase().split("");
-  arr.sort();
-  for (let i = 0; i <= arr.length - 1; i++) {
-    if (arr[i] === arr[i + 1]) {
-      return false;
-    }
+// function isIsogram(str) {
+//   const arr = str.toLocaleLowerCase().split("");
+//   arr.sort();
+//   for (let i = 0; i <= arr.length - 1; i++) {
+//     if (arr[i] === arr[i + 1]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isIsogram("Dermatoglyphics"));
+
+function solution(str, ending) {
+  let rez = str.match(new RegExp(ending + "$")) || [];
+  console.log(rez.length);
+  if (rez.length == 0) {
+    return false;
   }
   return true;
 }
-console.log(isIsogram("Dermatoglyphics"));
+// console.log(solution("abc", "bc"));
+// console.log(solution("abc", "d"));
+// console.log(solution("abcde", "abc"));
+console.log(solution("abcde", "cde"));
